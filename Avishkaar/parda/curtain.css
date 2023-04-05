@@ -1,0 +1,59 @@
+body, body > div {
+    align-items: center;
+    display: flex;
+    justify-content: center;
+  }
+  
+  body {
+    margin: 0;
+    height: 100vh;
+  }
+  
+  [class*=curtain] {
+    position: relative;
+    border: 1px solid red;
+    height: 100%;
+    width:100%;
+/*     margin: 5vh; */
+    padding: 5vw;
+  }
+  
+  [class*=curtain]::after,
+  [class*=curtain]::before {
+    content: '';
+    background-color: rgb(136, 167, 175);
+    position: absolute;
+    transition-duration: 0.5s;
+  }
+  
+  [class*=curtain]:hover:after,
+  [class*=curtain]:hover:before {
+    opacity: 0;
+  }
+  
+  .curtain-0::after,
+  .curtain-0::before {
+    height: 100%;
+    width: 50%;
+  }
+  
+  /* .curtain-1::after, */
+  /* .curtain-1::before { */
+  /*   height: 50%;
+    width: 100%;
+  } */
+  
+  .curtain-0::after {
+    right: 0;
+    transform-origin: right;
+  }
+  
+  .curtain-0::before {
+    left: 0;
+    transform-origin: left;
+  }
+  
+  .curtain-0:hover:after,
+  .curtain-0:hover:before {
+    transform: scaleX(0);
+  }
